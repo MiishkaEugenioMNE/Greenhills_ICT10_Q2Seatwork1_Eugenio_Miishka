@@ -1,0 +1,223 @@
+/* ===================================
+   CHIIKAWA CANDIDATE VERIFICATION
+   Formal Pastel Design
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --cream: #fffaf2;
+    --white: #ffffff;
+    --pink: #f4cbd2;
+    --pink-dark: #d9879b;
+    --blue: #dcebf5;
+    --blue-dark: #769db8;
+    --yellow: #f8e8b0;
+    --brown: #63534d;
+    --muted: #94847e;
+    --border: #f0e3dc;
+    --success: #6e9b80;
+    --shadow: 0 12px 35px rgba(110, 80, 70, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--brown);
+    background:
+        radial-gradient(circle at 10% 15%, #f8e2e6 0, transparent 25%),
+        radial-gradient(circle at 90% 85%, #e4eff7 0, transparent 28%),
+        var(--cream);
+}
+
+/* Main verification card */
+form {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 42px 35px 35px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+/* Decorative top accent */
+form::before {
+    content: "♡";
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--pink-dark);
+    background: var(--pink);
+    border: 5px solid var(--cream);
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+/* Heading */
+form::after {
+    content: "CHIIKAWA FRIENDS CLUB";
+    order: -1;
+    margin-bottom: 3px;
+    color: var(--pink-dark);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* Input fields */
+input[type="text"] {
+    width: 100%;
+    padding: 15px 17px;
+    color: var(--brown);
+    background: #fffdfb;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #b5a6a0;
+    font-weight: 500;
+}
+
+input[type="text"]:hover {
+    border-color: var(--pink);
+}
+
+input[type="text"]:focus {
+    background: #ffffff;
+    border-color: var(--pink-dark);
+    box-shadow: 0 0 0 4px rgba(244, 203, 210, 0.25);
+}
+
+/* Search button */
+input[type="button"] {
+    width: 100%;
+    margin-top: 5px;
+    padding: 15px;
+    color: #ffffff;
+    background: var(--pink-dark);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: all 0.25s ease;
+}
+
+input[type="button"]:hover {
+    background: #c9768d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(217, 135, 155, 0.25);
+}
+
+input[type="button"]:active {
+    transform: translateY(0);
+}
+
+/* Verification result */
+#output {
+    width: 100%;
+    max-width: 440px;
+    margin-top: 22px;
+    padding: 20px 24px;
+    color: var(--brown);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    animation: fadeIn 0.35s ease;
+}
+
+/* Hide empty result container */
+#output:empty {
+    display: none;
+}
+
+/* Subtle entrance animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    body {
+        padding: 25px 16px;
+    }
+
+    form {
+        padding: 40px 24px 28px;
+        border-radius: 20px;
+    }
+
+    input[type="text"],
+    input[type="button"] {
+        font-size: 13px;
+    }
+
+    #output {
+        font-size: 13px;
+    }
+}
+/* Name capitalization note */
+form .name-note {
+    order: 0;
+    margin-top: -10px;
+    margin-bottom: 2px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+form .name-note::before {
+    content: "♡ ";
+    color: var(--pink-dark);
+}
+
+form .name-note::after {
+    content: " ♡";
+    color: var(--pink-dark);
+}

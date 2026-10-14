@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Verification System</title>
+    <!-- PyScript CSS -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.2/core.css">
+    <!-- PyScript JavaScript -->
+    <script type="module" src="https://pyscript.net/releases/2026.7.2/core.js"></script>
+    <!--Stylecss-->
+    <link rel="stylesheet" href="style.css">
+    <!-- link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Candidate Verification</h1>
+    <p>Check if you are part of our club!</p>
+    <form>
+    <p class="name-note">Note: Please capitalize the first letter of your name.</p>
+        <input type="text" id="student_firstname" placeholder="Enter Your First Name">
+        <input type="text" id="student_lastname" placeholder="Enter your Last Name">
+        <input type="button" py-click="student_club" value="Search">
+    </form>
+    <div id="output"></div>
+    <py-script src="main.py"></py-script>
+</body>
+</html>
